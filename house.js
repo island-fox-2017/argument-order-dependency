@@ -2,16 +2,16 @@
 
 class House {
 
-  constructor(address, square_feet, num_bedrooms, num_baths, cost, down_payment, sold, short_sale, has_tenants) {
-    this.address = address
-    this.square_feet = square_feet
-    this.num_bedrooms = num_bedrooms || 3
-    this.num_baths = num_baths || 2
-    this.cost = cost || 320000
-    this.down_payment = down_payment || 0.20
-    this.sold = sold || false
-    this.short_sale = short_sale
-    this.has_tenants = has_tenants || false
+  constructor(tmp){
+    this.address = tmp['address']
+    this.square_feet = tmp['square_feet']
+    this.num_bedrooms = tmp['num_bedrooms'] || 3
+    this.num_baths = tmp['num_baths'] || 2
+    this.cost = tmp['cost'] || 320000
+    this.down_payment = tmp['down_payment'] || 0.20
+    this.sold = tmp['sold'] || false
+    this.short_sale = tmp['short_sale']
+    this.has_tenants = tmp['has_tenants'] || false
   }
 
   obscure_address() {
@@ -33,6 +33,26 @@ class House {
   }
 }
 
-const cool = new House('address', 100, 2, 2, 12345, 12345, true, true)
+function make_a_speech(components) {
+  introduction = components['introduction']
+  inappropriate_anecdote = components['inappropriate_anecdote']
+  long_winded
+}
+
+let tmp = {
+  address : 'address',
+  square_feet : 100,
+  num_bedrooms : 2,
+  num_baths : 2,
+  cost : 12345,
+  down_payment : 12345,
+  sold : true,
+  short_sale : true,
+  has_tenants :''
+}
+
+const cool = new House(tmp)
 
 console.log(cool.to_s())
+
+//undefined : 100 sq. ft., 2 bed, 2 bath. 12345
